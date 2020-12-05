@@ -9,7 +9,47 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application' %>
   </head>
+
   <body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <!-- Brand -->
+    <%= link_to "Share Impressions", root_path, class: "navbar-brand" %>
+    <!-- Links -->
+    <ul class="navbar-nav" id="navItems">
+      <% if user_signed_in?%>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><%= current_user.name %></a>
+        </li>
+        <li class="nav-item">
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link" %>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to "新規登録", new_user_registration_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "ログイン", new_user_session_path, class: "nav-link" %>
+        </li>
+      <% end %>
+      <!-- Dropdown -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">
+          Menu
+        </a>
+        <div class="dropdown-menu">
+          <% if user_signed_in? %>
+            <a class="dropdown-item" href="#">投稿する</a>
+            <a class="dropdown-item" href="#">お気に入り</a>
+            <a class="dropdown-item" href="#">タグ一覧</a>
+            <a class="dropdown-item" href="#">作品タイトルで検索</a>
+          <% else %>
+            <a class="dropdown-item" href="#">タグ一覧</a>
+            <a class="dropdown-item" href="#">作品タイトルで検索</a>
+          <% end %>
+        </div>
+      </li>
+    </ul>
+    </nav>
     <%= yield %>
   </body>
 </html>
