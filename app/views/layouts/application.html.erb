@@ -5,39 +5,51 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <%= stylesheet_pack_tag 'application' %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application' %>
   </head>
 
   <body>
-    <header class="header">
-      <div class="header__bar row">
-        <h1 class="grid-6"><a href="/">ShareImpressions</a></h1>
-        <% if user_signed_in? %>
-          <div class="user_nav grid-6">
-            <span><%= current_user.name %>
-              <ul class="user__info">
-                <li>
-                  <%= link_to "マイページ", "/users/#{current_user.id}" %>
-                  <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-                </li>
-              </ul>
-            </span>
-            <%= link_to "投稿する", new_tweet_path, class: "post" %>
-          </div>
-        <% else %>
-          <div class="grid-6">
-            <%= link_to "ログイン", new_user_session_path, class: "post" %>
-            <%= link_to "新規登録", new_user_registration_path, class: "post" %>
-          </div>
-        <% end %>
-      </div>
-    </header>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <!-- Brand -->
+    <%= link_to "Share Impressions", root_path, class: "navbar-brand" %>
+    <!-- Links -->
+    <ul class="navbar-nav" id="navItems">
+      <% if user_signed_in?%>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><%= current_user.name %></a>
+        </li>
+        <li class="nav-item">
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link" %>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to "新規登録", new_user_registration_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "ログイン", new_user_session_path, class: "nav-link" %>
+        </li>
+      <% end %>
+      <!-- Dropdown -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">
+          Menu
+        </a>
+        <div class="dropdown-menu">
+          <% if user_signed_in? %>
+            <a class="dropdown-item" href="#">投稿する</a>
+            <a class="dropdown-item" href="#">お気に入り</a>
+            <a class="dropdown-item" href="#">タグ一覧</a>
+            <a class="dropdown-item" href="#">作品タイトルで検索</a>
+          <% else %>
+            <a class="dropdown-item" href="#">タグ一覧</a>
+            <a class="dropdown-item" href="#">作品タイトルで検索</a>
+          <% end %>
+        </div>
+      </li>
+    </ul>
+    </nav>
     <%= yield %>
-    <footer>
-      <p>
-        Copyright ShareImpressions 2020.
-      </p>
-    </footer>
   </body>
 </html>
