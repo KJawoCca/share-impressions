@@ -1,23 +1,25 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-sm-9" >
-      <form >
-        <div class="custom-control custom-control-inline">
-          <div class="card" style="width:30vw">
+    <div class="col-sm-9">
+      <%= form_with model: @review, class: 'form', local: true do |f| %>
+        <div class="custom-control custom-control-inline" id="opus_info">
+          <div class="card" id="info_left">
             <img class="card-img-top" src=# alt="Card image">
             <div class="card-body">
-              <h4 class="card-title">John Doe</h4>
+              <h4 class="card-title">
+              <%= f.text_field :title %>
+              </h4>
               <p class="card-text">Some example text.</p>
             </div>
           </div>
-          <div>
-            <div class="form-group mt-2 ml-4" style="width:50vh">
-              <label for="opus_title">ゲームタイトル / ver</label>
-              <input type="text" class="form-control" id="opus_title">
+          <div id="info_right">
+            <div class="form-group mt-2 ml-4">
+              <p>ゲームタイトル / ver</p>
+              <%= f.text_field :opus_title, class: "form-control" %>
             </div>
             <div class="form-group mt-2 ml-4">
-              <label for="author_name">作者</label>
-              <input type="text" class="form-control" id="author_name">
+              <p>作者</p>
+              <%= f.text_field :author_name, class: "form-control" %>
             </div>
             <div class="form-group mt-2 ml-4">
               <label for="authors_website">作者HP</label>
@@ -26,11 +28,11 @@
           </div>
         </div>
         <h5 class="mt-4 ml-3">レビュー</h5>
-        <textarea name="text" class="form-control mb-4" style="height:32vh"></textarea>
+        <%= f.text_area :text, class: "form-control mb-4", style: "height: 32vh;" %>
         <div id="submit_form">
-          <button type="submit" class="btn btn-primary mr-5" style="width:160px">投稿する</button>
+          <%= f.submit '投稿する', class: "btn btn-primary mr-5", style: "width: 160px;" %>
         </div>
-      </form>
+      <% end %>
     </div>
     <div class="col-sm-3" >
       Right_side
