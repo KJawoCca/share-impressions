@@ -4,7 +4,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
 @media (max-width: 992px) {
   #navItems {
     display: flex;
@@ -13,4 +12,8 @@
   .nav-item {
     margin: 0 10px 0;
   }
+}
+
+#submit_form{
+  text-align: end;
 }

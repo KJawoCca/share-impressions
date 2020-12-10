@@ -16,7 +16,7 @@
     <%= link_to "Share Impressions", root_path, class: "navbar-brand" %>
     <!-- Links -->
     <ul class="navbar-nav" id="navItems">
-      <% if user_signed_in?%>
+      <% if user_signed_in? %>
         <li class="nav-item">
           <a class="nav-link" href="#"><%= current_user.name %></a>
         </li>
@@ -38,7 +38,7 @@
         </a>
         <div class="dropdown-menu">
           <% if user_signed_in? %>
-            <a class="dropdown-item" href="#">投稿する</a>
+            <%= link_to "投稿する", new_review_path, class: "dropdown-item" %>
             <a class="dropdown-item" href="#">お気に入り</a>
             <a class="dropdown-item" href="#">タグ一覧</a>
             <a class="dropdown-item" href="#">作品タイトルで検索</a>
