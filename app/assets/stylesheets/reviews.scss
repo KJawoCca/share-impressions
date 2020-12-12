@@ -4,38 +4,44 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#input_item {
+  margin: 0 130px 0 20px;
+}
+
+@media (max-width: 1200px) {
+  #input_item {
+    margin: 0 100px 0 20px;
+  }
+}
+
 @media (max-width: 992px) {
-  #navItems {
+  #nav_items {
     display: flex;
     flex-direction: row;
   }
   .nav-item {
     margin: 0 10px 0;
   }
-}
-
-// @media (max-width: 576px) {
-//   #info_left {
-//     width: 1000px
-//   }
-// }
-
-#submit_form{
-  text-align: end;
-}
-
-#opus_info{
-  width: 100%
-}
-
-#info_right{
-  width: 70%
-}
-
-.form-group{
-  input[type="text"]{
-    width: 80%
+  #input_item {
+    margin: 0 50px 0 20px;
   }
+}
+
+@media (max-width: 768px) {
+  #input_item {
+    margin: 0 0 0 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  #input_item {
+    margin: 0 20px;
+  }
+}
+
+img {
+  width: 100%;
+  height: auto;
 }
 
 #info_left{
@@ -46,4 +52,8 @@
 
 #opus_image{
   display: none
+}
+
+#submit_form{
+  text-align: end;
 }

@@ -15,7 +15,7 @@
     <!-- Brand -->
     <%= link_to "Share Impressions", root_path, class: "navbar-brand" %>
     <!-- Links -->
-    <ul class="navbar-nav" id="navItems">
+    <ul class="navbar-nav" id="nav_items">
       <% if user_signed_in? %>
         <li class="nav-item">
           <a class="nav-link" href="#"><%= current_user.name %></a>

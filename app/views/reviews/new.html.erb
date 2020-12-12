@@ -1,32 +1,36 @@
 <div class="container-fluid">
   <%= form_with model: @review, class: 'form', local: true do |f| %>
-    <div class="row custom-control custom-control-inline" id="opus_info">
+    <div class="row" id="opus_info">
       <label for="opus_image" class="card col-sm-7 col-md-6 col-lg-5" id="info_left">
         <%= f.file_field :image, id:"opus_image" %>
         <% unless @review.image.attached? %>
-          <%= image_tag "sample.jpg", id: "sample_img" %>
+          <%= image_tag "sample2.jpg", id: "sample_img" %>
         <% end %>
-        <h6 class="card-title">タイトルイメージ</h6>
+        <p class="card-title mt-1">タイトルイメージ（クリックして添付）</p>
       </label>
       <div class="col-sm-5 col-md-6 col-lg-7" id="info_right">
-        <div class="form-group mt-2 ml-4">
+        <div class="mt-2" id="input_item">
           <p>ゲームタイトル / ver</p>
           <%= f.text_field :opus_title, class: "form-control" %>
         </div>
-        <div class="form-group mt-2 ml-4">
+        <div class="mt-2" id="input_item">
           <p>作者</p>
           <%= f.text_field :author_name, class: "form-control" %>
         </div>
-        <div class="form-group mt-2 ml-4">
-          <label for="authors_website">作者HP</label>
-          <input type="text" class="form-control" id="authors_website">
+        <div class="mt-2" id="input_item">
+          <p>作者HP</p>
+          <%= f.text_field :authors_website, class: "form-control" %>
         </div>
       </div>
     </div>
-    <h5 class="mt-4 ml-3">レビュータイトル</h5>
-    <%= f.text_field :title, class: "form-control mb-4" %>
-    <h5 class="mt-4 ml-3">レビュー</h5>
-    <%= f.text_area :text, class: "form-control mb-4", style: "height: 32vh;" %>
+    <div class="mt-4 ml-3 mr-3">
+      <h5>レビュータイトル</h5>
+      <%= f.text_field :title, class: "form-control mb-4" %>
+    </div>
+    <div class="mt-4 ml-3 mr-3">
+      <h5>レビュー</h5>
+      <%= f.text_area :text, class: "form-control mb-4", style: "height: 32vh;" %>
+    </div>
     <div id="submit_form">
       <%= f.submit '投稿する', class: "btn btn-primary mr-5", style: "width: 160px;" %>
     </div>
