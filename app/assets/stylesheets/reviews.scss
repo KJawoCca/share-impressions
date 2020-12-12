@@ -14,16 +14,18 @@
   }
 }
 
+// @media (max-width: 576px) {
+//   #info_left {
+//     width: 1000px
+//   }
+// }
+
 #submit_form{
   text-align: end;
 }
 
 #opus_info{
   width: 100%
-}
-
-#info_left{
-  width: 30%
 }
 
 #info_right{
@@ -36,6 +38,12 @@
   }
 }
 
-label{
-  width: 100%
+#info_left{
+  cursor: pointer;
+  display: inline-flex;
+  flex-direction: column-reverse;
+}
+
+#opus_image{
+  display: none
 }
