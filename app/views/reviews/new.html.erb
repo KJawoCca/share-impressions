@@ -3,6 +3,7 @@
     <div class="row" id="opus_info">
       <label for="opus_image" class="card col-sm-7 col-md-6 col-lg-5" id="info_left">
         <%= f.file_field :image, id:"opus_image" %>
+        <div id="image_preview"></div>
         <% unless @review.image.attached? %>
           <%= image_tag "sample2.jpg", id: "sample_img" %>
           <p class="card-title mt-1" id="image_title">タイトルイメージ（クリックして添付）</p>
