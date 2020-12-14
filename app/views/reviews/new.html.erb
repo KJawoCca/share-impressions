@@ -1,17 +1,19 @@
 <div class="container-fluid">
   <%= form_with model: @review, class: 'form', local: true do |f| %>
     <div class="row" id="opus_info">
-      <label for="opus_image" class="card col-sm-7 col-md-6 col-lg-5" id="info_left">
-        <%= f.file_field :image, id:"opus_image" %>
-        <div id="image_preview"></div>
-        <% unless @review.image.attached? %>
-          <%= image_tag "sample2.jpg", id: "sample_img" %>
-          <p class="card-title mt-1" id="image_title">タイトルイメージ（クリックして添付）</p>
-          <p class="card-text" id="image_text">サンプル：
-          <a href="https://pixabay.com/ja/users/kirillslov-8058952/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=5773481">kirillslov</a>による<a href="https://pixabay.com/ja/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=5773481">Pixabay</a>からの画像
-          </p>
-        <% end %>
-      </label>
+      <div class="card col-sm-7 col-md-6 col-lg-5">
+        <label for="opus_image" id="info_left">
+          <%= f.file_field :image, id:"opus_image" %>
+          <div id="image_preview"></div>
+          <% unless @review.image.attached? %>
+            <%= image_tag "sample2.jpg", id: "sample_img" %>
+            <p class="card-title mt-1" id="image_title">タイトルイメージ（クリックして添付）</p>
+            <p class="card-text" id="image_text">サンプル：
+            <a href="https://pixabay.com/ja/users/kirillslov-8058952/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=5773481">kirillslov</a>による<a href="https://pixabay.com/ja/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=5773481">Pixabay</a>からの画像
+            </p>
+          <% end %>
+        </label>
+      </div>
       <div class="col-sm-5 col-md-6 col-lg-7" id="info_right">
         <div class="mt-2" id="input_item">
           <p>ゲームタイトル / ver</p>

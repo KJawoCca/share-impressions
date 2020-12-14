@@ -1,0 +1,15 @@
+<div id="wrapper">
+  <% if @reviews.exists? %>
+    <div class="card col-6" id="review_contents">
+      <% if review.image.attached?%>
+        <%= image_tag review.image %>
+      <% else %>
+        <%= image_tag "sample2.jpg", id: "sample_img" %>
+        <p class="card-text" id="image_text">サンプル：
+        <a href="https://pixabay.com/ja/users/kirillslov-8058952/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=5773481">kirillslov</a>による<a href="https://pixabay.com/ja/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=5773481">Pixabay</a>からの画像
+        </p>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+

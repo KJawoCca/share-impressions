@@ -9,7 +9,7 @@ if (document.URL.match( /new/ ) || document.URL.match( /edit/ )) {
       const imageTitle = document.getElementById('image_title');
       if (imageContent){
         imageContent.remove();
-        imageText.remove();
+        imageText.textContent = "";
         imageTitle.textContent = "タイトルイメージ";
       }
 
