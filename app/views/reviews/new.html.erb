@@ -1,44 +1,48 @@
-<div class="container-fluid">
+<div class="container-field">
   <%= form_with model: @review, class: 'form', local: true do |f| %>
-    <div class="row" id="opus_info">
-      <div class="card col-sm-7 col-md-6 col-lg-5">
-        <label for="opus_image" id="info_left">
+    <div class="row" id="top_part">
+      <div class="card border-0 col-sm-5" id="top_left">
+        <label for="opus_image" id="image_field">
+          <p class="card-title mt-3 ml-4" id="image_title">タイトルイメージ（クリックして添付）</p>
           <%= f.file_field :image, id:"opus_image" %>
           <div id="image_preview"></div>
           <% unless @review.image.attached? %>
-            <%= image_tag "sample2.jpg", id: "sample_img" %>
-            <p class="card-title mt-1" id="image_title">タイトルイメージ（クリックして添付）</p>
-            <p class="card-text" id="image_text">サンプル：
-            <a href="https://pixabay.com/ja/users/kirillslov-8058952/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=5773481">kirillslov</a>による<a href="https://pixabay.com/ja/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=5773481">Pixabay</a>からの画像
-            </p>
+            <div id="image_setting">
+              <%= image_tag "sample2.jpg", id: "sample_img" %>
+              <p class="card-text ml-4" id="image_text">サンプル：
+                <a href="https://pixabay.com/ja/users/kirillslov-8058952/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=5773481">kirillslov</a>による<a href="https://pixabay.com/ja/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=5773481">Pixabay</a>からの画像
+              </p>
+            </div>
           <% end %>
         </label>
       </div>
-      <div class="col-sm-5 col-md-6 col-lg-7" id="info_right">
-        <div class="mt-2" id="input_item">
-          <p>ゲームタイトル / ver</p>
+      <div class="col-sm-7" id="top_right">
+        <div class="form-group" id="input_top">
+          <h6>ゲームタイトル / ver</h6>
           <%= f.text_field :opus_title, class: "form-control" %>
         </div>
-        <div class="mt-2" id="input_item">
-          <p>作者</p>
+        <div class="form-group" id="input_top">
+          <h6>作者</h6>
           <%= f.text_field :author_name, class: "form-control" %>
         </div>
-        <div class="mt-2" id="input_item">
-          <p>作者HP</p>
+        <div class="form-group" id="input_top">
+          <h6>作者HP</h6>
           <%= f.text_field :authors_website, class: "form-control" %>
         </div>
       </div>
     </div>
-    <div class="mt-4 ml-3 mr-3">
-      <h5>レビュータイトル</h5>
-      <%= f.text_field :title, class: "form-control mb-4" %>
-    </div>
-    <div class="mt-4 ml-3 mr-3">
-      <h5>レビュー</h5>
-      <%= f.text_area :text, class: "form-control mb-4", style: "height: 32vh;" %>
-    </div>
-    <div id="submit_form">
-      <%= f.submit '投稿する', class: "btn btn-primary mr-5", style: "width: 160px;" %>
+    <div id="lower_part">
+      <div class="form-group mx-3 my-4" id="input_lower">
+        <h5>レビュータイトル</h5>
+        <%= f.text_field :title, class: "form-control" %>
+      </div>
+      <div class="form-group mx-3 my-4" id="input_lower">
+        <h5>レビュー</h5>
+        <%= f.text_area :text, class: "form-control", style: "height: 32vh" %>
+      </div>
+      <div class="form-group  mr-5" id="submit_btn">
+        <%= f.submit '投稿する', class: "btn btn-primary", style: "width: 160px" %>
+      </div>
     </div>
   <% end %>
 </div>

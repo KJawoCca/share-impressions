@@ -4,14 +4,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#input_item {
-  margin: 0 130px 0 20px;
+* {
+  box-sizing: border-box;
 }
 
-@media (max-width: 1200px) {
-  #input_item {
-    margin: 0 100px 0 20px;
-  }
+#input_top {
+  margin: 5% 20% 5% 2%;
 }
 
 @media (max-width: 992px) {
@@ -22,48 +20,63 @@
   .nav-item {
     margin: 0 10px 0;
   }
-  #input_item {
-    margin: 0 50px 0 20px;
-  }
-}
-
-@media (max-width: 768px) {
-  #input_item {
-    margin: 0 0 0 20px;
-  }
 }
 
 @media (max-width: 576px) {
-  #input_item {
-    margin: 0 20px;
+  #input_top {
+    margin: 12px 20px 0;
   }
 }
 
-img {
+.card {
+  position: relative;
   width: 100%;
-  height: auto;
+  overflow: hidden;
 }
 
-#info_left{
+.card:before {
+  content: "";
+  display: block;
+  padding-top: 75%;
+}
+
+#image_field {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
   cursor: pointer;
-  display: inline-flex;
+}
+
+#opus_image{
+  display: none;
+}
+
+#image_title{
+  height: 5%;
+  display: flex;
+  align-items: center;
+}
+
+#image_setting{
+  height: 85%;
+  display: flex;
   flex-direction: column-reverse;
   position: relative;
 }
 
-#opus_image{
-  display: none
+.card img {
+  display: block;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 
 #image_text{
   position: absolute;
 }
 
-#submit_form{
+#submit_btn{
   text-align: end;
-}
-
-.card {
-  height: 50vh;
-  // overflow: hidden;
 }
