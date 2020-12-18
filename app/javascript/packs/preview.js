@@ -10,7 +10,7 @@ if (document.URL.match( /new/ ) || document.URL.match( /edit/ )) {
       if (imageContent){
         imageContent.remove();
         imageText.textContent = "";
-        imageTitle.textContent = "タイトルイメージ";
+        imageTitle.textContent = "";
       }
 
       const file = e.target.files[0];

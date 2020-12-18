@@ -8,18 +8,17 @@
   box-sizing: border-box;
 }
 
-#input_top {
-  margin: 5% 20% 5% 2%;
+#nav_items {
+  display: flex;
+  flex-direction: row;
 }
 
-@media (max-width: 992px) {
-  #nav_items {
-    display: flex;
-    flex-direction: row;
-  }
-  .nav-item {
-    margin: 0 10px 0;
-  }
+.nav-item {
+  margin: 0 10px 0;
+}
+
+#input_top {
+  margin: 5% 20% 5% 2%;
 }
 
 @media (max-width: 576px) {
@@ -53,17 +52,11 @@
   display: none;
 }
 
-#image_title{
-  height: 5%;
-  display: flex;
-  align-items: center;
-}
-
 #image_setting{
+  position: relative;
   height: 85%;
   display: flex;
   flex-direction: column-reverse;
-  position: relative;
 }
 
 .card img {
@@ -75,6 +68,19 @@
 
 #image_text{
   position: absolute;
+}
+
+#title_setting{
+  position: relative;
+  height: 18%;
+}
+
+#image_title{
+  position:absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
 }
 
 #submit_btn{

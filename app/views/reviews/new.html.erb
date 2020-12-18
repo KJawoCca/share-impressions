@@ -1,9 +1,8 @@
 <div class="container-field">
   <%= form_with model: @review, class: 'form', local: true do |f| %>
     <div class="row" id="top_part">
-      <div class="card border-0 col-sm-5" id="top_left">
+      <div class="card col-sm-5" id="top_left">
         <label for="opus_image" id="image_field">
-          <p class="card-title mt-3 ml-4" id="image_title">タイトルイメージ（クリックして添付）</p>
           <%= f.file_field :image, id:"opus_image" %>
           <div id="image_preview"></div>
           <% unless @review.image.attached? %>
@@ -14,6 +13,9 @@
               </p>
             </div>
           <% end %>
+          <div id="title_setting">
+            <p class="card-title" id="image_title">タイトルイメージ（クリックして添付）</p>
+          </div>
         </label>
       </div>
       <div class="col-sm-7" id="top_right">
