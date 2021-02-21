@@ -1,10 +1,18 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-sm-8" >
-      <%= render partial: 'review', collection: @reviews %>
+      <div class="m-5">
+        <%= render partial: 'review', collection: @reviews %>
+      </div>
     </div>
-    <div class="col-sm-4" >
+    <div class="col-sm-4" style="background: lightblue;">
       Right_side
+      <div class="btn btn-primary py-0 my-3 w-100">
+        <a>
+          <p class="title-adjust">Primary</p>
+          <p class="title-adjust">Primary aaa</p>
+        </a>
+      </div>
     </div>
   </div>
 </div>
