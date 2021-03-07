@@ -1,12 +1,16 @@
 <% if @reviews.exists? %>
   <div class="card">
     <div class="card-contents">
+    <%= link_to '#' do %>
       <div class="btn btn-primary my-3 w-100">
-        Primary
+        <%= review.opus_title %>
       </div>
       <% if review.image.attached?%>
         <%= image_tag review.image, id: "review_image" %>
       <% else %>
+        <div class="btn btn-primary my-3 w-100">
+          <%= review.opus_title %>
+        </div>
         <div id="text_setting">
           <%= image_tag "sample2.jpg", id: "review_image" %>
           <p class="card-text ml-4" id="image_text">サンプル：
@@ -14,6 +18,7 @@
           </p>
         </div>
       <% end %>
+    <% end %>
     </div>
   </div>
 <% end %>
