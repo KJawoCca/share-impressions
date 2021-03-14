@@ -1,20 +1,15 @@
 <div class="container-field">
   <%= form_with model: @review, class: 'form', local: true do |f| %>
     <div class="row" id="top_part">
-      <div class="card col-sm-5" id="top_left">
+      <div class="card col-sm-5 border-0" id="top_left">
         <label for="opus_image" class="card-contents" id="image_field">
           <%= f.file_field :image, id:"opus_image" %>
           <div id="image_preview"></div>
           <% unless @review.image.attached? %>
-            <div id="text_setting">
-              <%= image_tag "sample2.jpg", id: "sample_image" %>
-              <p class="card-text ml-4" id="image_text">サンプル：
-                <a href="https://pixabay.com/ja/users/kirillslov-8058952/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=5773481">kirillslov</a>による<a href="https://pixabay.com/ja/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=5773481">Pixabay</a>からの画像
-              </p>
-            </div>
+            <%= image_tag "sample4.jpg", id: "sample_image" %>
           <% end %>
           <div id="title_setting">
-            <p class="card-title" id="image_title">タイトルイメージ（クリックして添付）</p>
+            <p class="card-title" id="image_title">タイトルイメージ（クリックして添付してください）</p>
           </div>
         </label>
       </div>

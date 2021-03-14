@@ -1,5 +1,5 @@
 <% if @reviews.exists? %>
-  <div class="card">
+  <div class="card border-0">
     <div class="card-contents">
     <%= link_to '#' do %>
       <div class="btn btn-primary my-3 w-100">
@@ -8,17 +8,15 @@
       <% if review.image.attached?%>
         <%= image_tag review.image, id: "review_image" %>
       <% else %>
-        <div class="btn btn-primary my-3 w-100">
-          <%= review.opus_title %>
-        </div>
-        <div id="text_setting">
-          <%= image_tag "sample2.jpg", id: "review_image" %>
-          <p class="card-text ml-4" id="image_text">サンプル：
-            <a href="https://pixabay.com/ja/users/kirillslov-8058952/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=5773481">kirillslov</a>による<a href="https://pixabay.com/ja/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=5773481">Pixabay</a>からの画像
-          </p>
-        </div>
+        <%= image_tag "sample4.jpg", id: "sample_image" %>
       <% end %>
     <% end %>
+    </div>
+    <div class="px-3" id="info_wrapper">
+      <span id="info">
+        <%= review.title %>
+        <%= review.user.name %>
+      </span>
     </div>
   </div>
 <% end %>

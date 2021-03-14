@@ -39,7 +39,6 @@
   content: "";
   display: block;
   padding-top: 75%;
-  background-color: red;
 }
 
 .card-contents {
@@ -65,15 +64,8 @@
   height: 100%;
 }
 
-#text_setting{
-  position: relative;
+#sample_image{
   height: 85%;
-  display: flex;
-  flex-direction: column-reverse;
-}
-
-#image_text{
-  position: absolute;
 }
 
 #title_setting{
@@ -95,8 +87,18 @@
 
 // トップページ
 
-.title-adjust{
-  display: block;
+#info_wrapper{
+  position: absolute;
+  top:90%;
+  height:10%;
+  width:100%;
+  text-align: justify;
   text-align-last: justify;
-  margin-top: 10px;
+  background-color: lightcyan;
+  display: table;
+}
+
+#info{
+  display: table-cell;
+  vertical-align: middle;
 }
