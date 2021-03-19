@@ -1,14 +1,14 @@
 <% if @reviews.exists? %>
   <div class="card border-0">
     <div class="card-contents">
-    <%= link_to '#' do %>
+    <%= link_to review_path(review.id) do %>
       <div class="btn btn-primary my-3 w-100">
         <%= review.opus_title %>
       </div>
       <% if review.image.attached?%>
-        <%= image_tag review.image, id: "review_image" %>
+        <%= image_tag review.image %>
       <% else %>
-        <%= image_tag "sample4.jpg", id: "sample_image" %>
+        <%= image_tag "sample4.jpg" %>
       <% end %>
     <% end %>
     </div>

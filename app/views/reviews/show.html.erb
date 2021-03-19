@@ -1,0 +1,18 @@
+<div class="card border-0">
+  <div class="card-contents">
+    <div class="btn btn-primary my-3 w-100">
+      <%= @review.opus_title %>
+    </div>
+    <% if @review.image.attached?%>
+      <%= image_tag @review.image, id: "review_image" %>
+    <% else %>
+      <%= image_tag "sample4.jpg", id: "sample_image" %>
+    <% end %>
+  </div>
+  <div class="px-3" id="info_wrapper">
+    <span id="info">
+      <%= @review.title %>
+      <%= @review.user.name %>
+    </span>
+  </div>
+</div>
