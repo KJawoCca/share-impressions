@@ -1,7 +1,7 @@
 <% if @reviews.exists? %>
   <div class="card border-0">
+  <%= link_to review_path(review.id) do %>
     <div class="card-contents">
-    <%= link_to review_path(review.id) do %>
       <div class="btn btn-primary my-3 w-100">
         <%= review.opus_title %>
       </div>
@@ -10,7 +10,6 @@
       <% else %>
         <%= image_tag "sample4.jpg" %>
       <% end %>
-    <% end %>
     </div>
     <div class="px-3" id="info_wrapper">
       <span id="info">
@@ -18,6 +17,7 @@
         <%= review.user.name %>
       </span>
     </div>
+  <% end %>
   </div>
 <% end %>
 

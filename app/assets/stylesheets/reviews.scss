@@ -32,7 +32,7 @@
 .card {
   position: relative;
   width: 100%;
-  // overflow: hidden;
+  overflow: hidden;
 }
 
 .card:before {
@@ -90,8 +90,8 @@
 
 #info_wrapper{
   position: absolute;
-  top:90%;
-  height:10%;
+  top:50%;
+  height:50%;
   width:100%;
   align-items: end;
   text-align: justify;
@@ -104,3 +104,46 @@
   display: table-cell;
   vertical-align: bottom;
 }
+
+// レビュー詳細ページ
+
+#opus_title {
+  width: 80%;
+  font-size:xx-large;
+  background: linear-gradient(transparent 85%, rgb(214, 11, 11) 0%);
+}
+
+#card_m{
+  width:70%;
+}
+
+#card_s{
+  width:70%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+}
+
+@media (min-width: 576px) {
+  #top_right{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 576px) {
+  #card_s {
+    margin-top: 1rem !important;
+    margin-right: 3rem !important;
+    margin-left: 3rem !important;
+    margin-bottom: 1rem !important;
+  }
+}
+

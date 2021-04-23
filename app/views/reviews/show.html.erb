@@ -1,18 +1,39 @@
-<div class="card border-0">
-  <div class="card-contents">
-    <div class="btn btn-primary my-3 w-100">
-      <%= @review.opus_title %>
+<div class="container-field">
+  <div class="row" id="top_part">
+    <div class="col-sm-8 border-0" id="top_left">
+      <div class="mx-5 my-3" id="opus_title">
+        <%= @review.opus_title %>
+      </div>
+      <div class="card mx-5" id="card_m">
+        <div class="card-contents">
+          <% if @review.image.attached?%>
+            <%= image_tag @review.image %>
+          <% else %>
+            <%= image_tag "sample4.jpg" %>
+          <% end %>
+        </div>
+      </div>
     </div>
-    <% if @review.image.attached?%>
-      <%= image_tag @review.image, id: "review_image" %>
-    <% else %>
-      <%= image_tag "sample4.jpg", id: "sample_image" %>
-    <% end %>
+    <div class="col-sm-4" id="top_right">
+      <div class="bg-light mt-5" id="card_s">
+        <span>レビュー投稿日：<%= @review.created_at.strftime('%Y/%m/%d') %></span>
+        <span>レビュワー：<%= @review.user.name %></span>
+      </div>
+      <div class="bg-light mt-5" id="card_s">
+        <span>作品情報</span>
+        <span>作者名：<%= @review.author_name %></span>
+        <span>作者HP：<%= @review.authors_website %></span>
+      </div>
+    </div>
   </div>
-  <div class="px-3" id="info_wrapper">
-    <span id="info">
+  <div id="lower_part">
+    <div class="form-group mx-3 my-4" id="input_lower">
+      <h5>レビュータイトル</h5>
       <%= @review.title %>
-      <%= @review.user.name %>
-    </span>
+    </div>
+    <div class="form-group mx-3 my-4" id="input_lower">
+      <h5>レビュー</h5>
+      <%= @review.text %>
+    </div>
   </div>
 </div>
