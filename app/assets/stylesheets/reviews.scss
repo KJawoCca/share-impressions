@@ -110,7 +110,7 @@
 #opus_title {
   width: 80%;
   font-size:xx-large;
-  background: linear-gradient(transparent 85%, rgb(214, 11, 11) 0%);
+  background: linear-gradient(transparent 85%, rgb(155, 150, 150) 0%);
 }
 
 #card_m{
@@ -147,3 +147,30 @@
   }
 }
 
+// レビュー編集ページ
+
+.edit-left{
+  width: 100%;
+  border: none;
+  background:rgba(51,112,121,0);
+}
+
+.edit-right{
+  border: none;
+  background:rgba(51,112,121,0);
+}
+
+.edit-title{
+  width: 100%;
+  border: none;
+}
+
+.edit-text{
+  min-height: 32vh;
+  width: 100%;
+  border: none;
+}
+
+.btn_guide{
+  text-align: end;
+}
