@@ -7,7 +7,8 @@
       </div>
       <div class="card mx-5 border-0" id="card_m">
         <label for="opus_image" class="card-contents">
-        <%= f.file_field :image, id:"opus_image" %>
+          <%= f.file_field :image, id:"opus_image" %>
+          <div id="image_preview"></div>
           <% if @review.image.attached?%>
             <%= image_tag @review.image %>
           <% else %>
