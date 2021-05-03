@@ -42,7 +42,13 @@
       <div id="edit_btn">
         <div class="btn_guide mr-3">レビュー内容を修正した場合はこちら</div>
         <div class="form-group  mr-3" id="submit_btn">
-          <%= f.submit '編集を完了する', class: "btn btn-primary", style: "width: 160px" %>
+          <%= f.submit '編集を完了する', class: "btn btn-secondary", style: "width: 160px" %>
+        </div>
+      </div>
+      <div id="delete_btn">
+        <div class="btn_guide mr-3">レビューを削除する場合はこちら</div>
+        <div class="form-group  mr-3" id="submit_btn">
+          <%= link_to 'レビューを削除', review_path(@review.id), method: :delete, class: "btn btn-secondary", style: "width: 160px" %>
         </div>
       </div>
     </div>
