@@ -1,6 +1,6 @@
 class Review < ApplicationRecord
   with_options presence: true do
-    validates :title, :opus_title, :author_name, :text
+    validates :title, :text, :opus_title, :author_name
   end
 
   belongs_to :user
