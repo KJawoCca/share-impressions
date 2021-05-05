@@ -1,0 +1,45 @@
+<div class="container-field">
+  <%= form_with model: @review, class: 'form', local: true do |f| %>
+    <div class="row" id="top_part">
+      <div class="card col-sm-5 border-0" id="top_left">
+        <label for="opus_image" class="card-contents" id="image_field">
+          <%= f.file_field :image, id:"opus_image" %>
+          <div id="image_preview"></div>
+          <% unless @review.image.attached? %>
+            <%= image_tag "sample4.jpg", id: "sample_image" %>
+          <% end %>
+          <div id="title_setting">
+            <p class="card-title" id="image_title">タイトルイメージ（クリックして添付してください）</p>
+          </div>
+        </label>
+      </div>
+      <div class="col-sm-7" id="top_right">
+        <div class="form-group" id="input_top">
+          <h6>ゲームタイトル / ver</h6>
+          <%= f.text_field :opus_title, class: "form-control" %>
+        </div>
+        <div class="form-group" id="input_top">
+          <h6>作者</h6>
+          <%= f.text_field :author_name, class: "form-control" %>
+        </div>
+        <div class="form-group" id="input_top">
+          <h6>作者HP</h6>
+          <%= f.text_field :authors_website, class: "form-control" %>
+        </div>
+      </div>
+    </div>
+    <div id="lower_part">
+      <div class="form-group mx-3 my-4" id="input_lower">
+        <h5>レビュータイトル</h5>
+        <%= f.text_field :title, class: "form-control" %>
+      </div>
+      <div class="form-group mx-3 my-4" id="input_lower">
+        <h5>レビュー</h5>
+        <%= f.text_area :text, class: "form-control", style: "height: 32vh" %>
+      </div>
+      <div class="form-group  mr-5" id="submit_btn">
+        <%= f.submit '投稿する', class: "btn btn-primary", style: "width: 160px" %>
+      </div>
+    </div>
+  <% end %>
+</div>

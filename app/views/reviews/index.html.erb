@@ -1,10 +1,11 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-sm-8" >
-      Left_side
-      <%# <%= render partial: 'reviews', collection: @reviews %>
+      <div class="m-5">
+        <%= render partial: 'review', collection: @reviews %>
+      </div>
     </div>
-    <div class="col-sm-4" >
+    <div class="col-sm-4" style="background: lightblue;">
       Right_side
     </div>
   </div>
