@@ -1,3 +1,5 @@
+![トップページ](https://github.com/KJawoCca/share-impressions/blob/master/demo01.jpg)
+
 # 概要
 
 ユーザー投稿型のレビューサイト。対象はフリーウェア（フリーゲーム）。
