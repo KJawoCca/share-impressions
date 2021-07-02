@@ -94,14 +94,19 @@
   height:50%;
   width:100%;
   align-items: end;
-  text-align-last: justify;
-  color: white;
+  color: #ffffff;
   display: table;
 }
 
 #info{
-  display: inline;
+  display: table-cell;
   vertical-align: bottom;
+}
+
+#info2{
+  display: table-cell;
+  vertical-align: bottom;
+  text-align: right;
 }
 
 // レビュー詳細ページ
