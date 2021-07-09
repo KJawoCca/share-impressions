@@ -49,8 +49,10 @@
   <span id="info">
     <%= review.title %>
   </span>
-  <span id="info2">
-    <%= review.user.name %>
-  </span>
+  <% if review.image.attached?%>
+    <%= image_tag review.image %>
+  <% else %>
+    <%= image_tag "sample4.jpg" %>
+  <% end %>
 </div>
 
