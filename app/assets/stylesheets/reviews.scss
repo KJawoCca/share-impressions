@@ -181,6 +181,10 @@
 
 .btn_guide22{
   text-align: justify;
-  margin-top: 1rem !important;
-  margin-right: 3rem !important;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
 }
