@@ -183,8 +183,7 @@
   text-align: justify;
   display: flex;
   flex-direction: column;
-  min-width: 0;
-  word-wrap: break-word;
-  background-color: #fff;
-  background-clip: border-box;
+  min-height: 32vh;
+  width: 100%;
+  border: none;
 }
