@@ -46,9 +46,10 @@
 
 
 <div class="px-3" id="info_wrapper">
-  <span id="info">
-    <%= review.title %>
-  </span>
+  <div class="bg-light mt-5" id="card_s">
+    <span>レビュー投稿日：<%= @review.created_at.strftime('%Y/%m/%d') %></span>
+    <span>レビュワー：<%= @review.user.name %></span>
+  </div>
   <div class="px-3" id="info_wrapper">
     <% if @review.image.attached?%>
       <%= image_tag @review.image %>

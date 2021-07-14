@@ -183,7 +183,7 @@
   text-align: justify;
   display: flex;
   flex-direction: column;
-  height:50%;
-  width:100%;
-  align-items: end;
+  min-height: 32vh;
+  width: 100%;
+  border: none;
 }
