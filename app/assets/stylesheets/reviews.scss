@@ -180,10 +180,9 @@
 }
 
 .btn_guide22{
-  text-align: justify;
-  display: flex;
-  flex-direction: column;
-  min-height: 32vh;
+  display: block;
+  object-fit: cover;
   width: 100%;
-  border: none;
+  height: 100%;
+  position: relative;
 }
