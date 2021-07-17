@@ -52,11 +52,10 @@
     <span>作者HP：<%= @review.authors_website %></span>
   </div>
   <div class="px-3" id="info_wrapper">
-    <% if @review.image.attached?%>
-      <%= image_tag @review.image %>
-    <% else %>
-      <%= image_tag "sample4.jpg" %>
-    <% end %>
+    <span id="info">
+      <%= review.title %>
+      <%= review.user.name %>
+    </span>
   </div>
 </div>
 
