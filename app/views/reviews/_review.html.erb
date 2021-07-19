@@ -47,16 +47,10 @@
 
 <div class="px-3" id="info_wrapper">
   <div class="bg-light mt-5" id="card_s">
-    <span>作品情報</span>
-    <span>作者名：<%= @review.author_name %></span>
-    <span>作者HP：<%= @review.authors_website %></span>
-  </div>
-  <div class="card-contents">
-    <% if @review.image.attached?%>
-      <%= image_tag @review.image %>
-    <% else %>
-      <%= image_tag "sample4.jpg" %>
-    <% end %>
+    <span id="info">
+      <%= review.title %>
+      <%= review.user.name %>
+    </span>
   </div>
 </div>
 

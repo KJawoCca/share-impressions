@@ -180,7 +180,8 @@
 }
 
 .btn_guide22{
-  position:absolute;
+  display: flex;
+  flex-direction: row;
   word-wrap: break-word;
   background-color: #fff;
   background-clip: border-box;
