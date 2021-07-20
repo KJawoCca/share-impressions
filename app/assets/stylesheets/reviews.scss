@@ -182,7 +182,7 @@
 .btn_guide22{
   display: flex;
   flex-direction: row;
-  word-wrap: break-word;
-  background-color: #fff;
-  background-clip: border-box;
+  display: table-cell;
+  vertical-align: bottom;
+  text-align: right;
 }
