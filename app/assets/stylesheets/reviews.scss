@@ -181,8 +181,6 @@
 
 .btn_guide22{
   display: flex;
-  flex-direction: row;
-  display: table-cell;
-  vertical-align: bottom;
-  text-align: right;
+  flex-direction: column;
+  align-items: center;
 }
