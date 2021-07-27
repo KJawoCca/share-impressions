@@ -46,13 +46,17 @@
 
 
 <div class="px-3" id="info_wrapper">
-  <div class="form-group mx-3 my-4" id="input_lower">
-    <h5>レビュータイトル</h5>
-    <%= @review.title %>
+  <div class="card-contents">
+    <% if @review.image.attached?%>
+      <%= image_tag @review.image %>
+    <% else %>
+      <%= image_tag "sample4.jpg" %>
+    <% end %>
   </div>
-  <div class="form-group mx-3 my-4" id="input_lower">
-    <h5>レビュー</h5>
-    <%= @review.text %>
+  <div class="bg-light mt-5" id="card_s">
+    <span>作品情報</span>
+    <span>作者名：<%= @review.author_name %></span>
+    <span>作者HP：<%= @review.authors_website %></span>
   </div>
 </div>
 
