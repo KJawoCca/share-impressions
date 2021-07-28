@@ -180,10 +180,7 @@
 }
 
 .btn_guide22{
-  word-wrap: break-word;
-  background-color: #fff;
-  background-clip: border-box;
-  min-height: 32vh;
-  width: 100%;
-  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
