@@ -46,13 +46,20 @@
 
 
 <div class="px-3" id="info_wrapper">
-  <div class="px-3" id="info_wrapper">
-    <span id="info">
-      <%= review.title %>
-    </span>
-    <span id="info2">
-      <%= review.user.name %>
-    </span>
+  <div class="card-contents">
+    <% if @review.image.attached?%>
+      <%= image_tag @review.image %>
+    <% else %>
+      <%= image_tag "sample4.jpg" %>
+    <% end %>
+  </div>
+  <div class="form-group mx-3 my-4" id="input_lower">
+    <h5>レビュータイトル</h5>
+    <%= @review.title %>
+  </div>
+  <div class="form-group mx-3 my-4" id="input_lower">
+    <h5>レビュー</h5>
+    <%= @review.text %>
   </div>
 </div>
 
