@@ -181,8 +181,7 @@
 
 
 .btn_guide22{
-  width:70%;
-  position: relative;
   display: flex;
-  background: linear-gradient(transparent 85%, rgb(155, 150, 150) 0%);
+  flex-direction: column;
+  align-items: center;
 }
