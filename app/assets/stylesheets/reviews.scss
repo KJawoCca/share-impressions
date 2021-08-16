@@ -181,7 +181,9 @@
 
 
 .btn_guide22{
-  display: table-cell;
-  vertical-align: bottom;
-  text-align: right;
+  width:70%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
 }
