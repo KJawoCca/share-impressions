@@ -184,4 +184,6 @@
   width:70%;
   position: relative;
   display: flex;
+  flex-direction: column;
+  min-width: 0;
 }
