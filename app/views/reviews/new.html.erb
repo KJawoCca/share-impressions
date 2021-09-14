@@ -1,13 +1,11 @@
 <div class="container-field">
-  <%= form_with model: @review, class: 'form', local: true do |f| %>
+  <%= form_with model: @review, url: reviews_path, class: 'form', local: true do |f| %>
     <div class="row" id="top_part">
       <div class="card col-sm-5 border-0" id="top_left">
         <label for="opus_image" class="card-contents" id="image_field">
           <%= f.file_field :image, id:"opus_image" %>
           <div id="image_preview"></div>
-          <% unless @review.image.attached? %>
-            <%= image_tag "sample4.jpg", id: "sample_image" %>
-          <% end %>
+          <%= image_tag "sample4.jpg", id: "sample_image" %>
           <div id="title_setting">
             <p class="card-title" id="image_title">タイトルイメージ（クリックして添付してください）</p>
           </div>
@@ -25,6 +23,10 @@
         <div class="form-group" id="input_top">
           <h6>作者HP</h6>
           <%= f.text_field :authors_website, class: "form-control" %>
+        </div>
+        <div class="form-group" id="input_top">
+          <h6>タグ</h6>
+          <%= f.text_field :tag_name, class: "form-control" %>
         </div>
       </div>
     </div>

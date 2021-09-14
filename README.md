@@ -117,8 +117,8 @@ VSCode
 
 | Column    | Type   | Options     |
 | --------- | ------ | ----------- |
-| name      | string | null: false |
-| attribute | string |             |
+| tag_name  | string | null: false |
+| tag_attr  | string |             |
 |           |        |             |
 
 ### Association
