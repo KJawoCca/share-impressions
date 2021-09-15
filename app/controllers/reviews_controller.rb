@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
-  before_action :find_review, only: [:show, :edit, :destroy]
+  before_action :find_review_tag, only: [:show, :edit, :update, :destroy]
 
   def index
     @reviews = Review.order("created_at DESC")
@@ -11,7 +11,7 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    @review = ReviewsTag.new(review_tag_params)
+    @review = ReviewsTag.new(review_params)
     if @review.valid?
       @review.save
       return redirect_to root_path
@@ -30,6 +30,9 @@ class ReviewsController < ApplicationController
   end
 
   def edit
+    if current_user.id != @review.user.id
+      redirect_to root_path
+    end
   end
 
   def update
@@ -50,13 +53,17 @@ class ReviewsController < ApplicationController
   end
   
   private
-  def review_tag_params
-    params.require(:reviews_tag).permit(:image, :title, :opus_title, :author_name, :authors_website, :text, :tag_name).merge(user_id: current_user.id)
+  def review_params
+    params.require(:reviews_tag).permit(:id, :image, :title, :opus_title, :author_name, :authors_website, :text, :tag_name).merge(user_id: current_user.id)
     # params.require(:review).permit(:image, :title, :opus_title, :author_name, :authors_website, :text).merge(user_id: current_user.id)
   end
 
-  def find_review
-    @review = Review.find(params[:id])
+  def review_tag_params
+    params.permit(:id, :image, :title, :opus_title, :author_name, :authors_website, :text, :tag_name).merge(user_id: current_user.id)
   end
 
+  def find_review_tag
+    @review = Review.find(params[:id])
+    @reviews_tag = ReviewsTag.new(@review_id)
+  end
 end

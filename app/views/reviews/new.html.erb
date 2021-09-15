@@ -24,9 +24,10 @@
           <h6>作者HP</h6>
           <%= f.text_field :authors_website, class: "form-control" %>
         </div>
-        <div class="form-group" id="input_top">
+        <div class="form-group" id="input_top2">
           <h6>タグ</h6>
-          <%= f.text_field :tag_name, class: "form-control" %>
+          <%= f.collection_select(:tag_name, Tag.all, :tag_name, :tag_name, {}, {class:"form-control", id:"tag-select"}) %>
+          <%# <%= f.text_field :tag_name, class: "form-control" %>
         </div>
       </div>
     </div>

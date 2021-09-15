@@ -27,6 +27,10 @@
         <span>作者名：<%= f.text_field :author_name, class: "edit-right" %></span>
         <span>作者HP：<%= f.text_field :authors_website, class: "edit-right" %></span>
       </div>
+      <div class="bg-light mt-5" id="card_s">
+        <span>タグ情報</span>
+        <span><%= f.collection_select(:tag_name, Tag.all, :tag_name, :tag_name, {}, {class:"edit-right"}) %></span>
+      </div>
     </div>
   </div>
   <div class="row" id="lower_part">

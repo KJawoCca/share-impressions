@@ -23,8 +23,17 @@
   margin: 5% 20% 5% 2%;
 }
 
+#input_top2{
+  margin: 5% 20% 5% 2%;
+  width: 30%;
+}
+
 @media (max-width: 576px) {
   #input_top {
+    margin: 12px 20px 0;
+  }
+
+  #input_top2 {
     margin: 12px 20px 0;
   }
 }
@@ -101,6 +110,12 @@
 #info{
   display: table-cell;
   vertical-align: bottom;
+}
+
+#info2{
+  display: table-cell;
+  vertical-align: bottom;
+  text-align: end;
 }
 
 // レビュー詳細ページ
